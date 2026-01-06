@@ -2,17 +2,53 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Ejercicio1.iniciar();
-        Ejercicio2.iniciar();
-        Ejercicio3.iniciar();
-        Ejercicio4.iniciar();
-        Ejercicio5.iniciar();
-        Ejercicio6.iniciar();
-        Ejercicio7.iniciar();
-        Ejercicio8.iniciar();
-        Ejercicio9.iniciar();
-        Ejercicio10.iniciar();
-
+        System.out.println("Ingrese el numero del ejercicio que quiera probar");
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        switch (num) {
+            case 1:
+                Ejercicio1.iniciar();    
+                break;
+            case 2:
+                Ejercicio2.iniciar();
+                
+                break;
+            case 3:
+                Ejercicio3.iniciar();
+                
+                break;
+            case 4:
+                Ejercicio4.iniciar();
+                
+                break;
+            case 5:
+                Ejercicio5.iniciar();
+                
+                break;
+            case 6:
+                Ejercicio6.iniciar();
+                
+                break;
+            case 7:
+                Ejercicio7.iniciar();
+                
+                
+                break;
+            case 8:
+                Ejercicio8.iniciar();
+                
+                break;
+            case 9:
+                Ejercicio9.iniciar();
+                
+                break;
+            case 10:
+                Ejercicio10.iniciar();
+                break;
+                        
+            case 0:
+                break;
+        }
     }
 }
 
@@ -59,6 +95,7 @@ class Ejercicio4 {
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
         //System.out.println(userName);
+        scanner.close();
 
     }
 }
@@ -75,6 +112,7 @@ class Ejercicio5 {
         else{
             System.out.println("El numero no es divisible entre 2");
         }
+        scanner.close();
     }
 }
 
@@ -87,6 +125,7 @@ class Ejercicio6 {
         final float iva = 0.1f;
         float precio_iva = precio*iva;
         System.out.println(precio_iva);
+        scanner.close();
 
     }
 }
@@ -115,6 +154,7 @@ class Ejercicio8 {
             numero = scanner.nextInt();
         } while (numero < 0);
         System.out.println(numero);
+        scanner.close();
     }
 }
 
@@ -136,6 +176,7 @@ class Ejercicio9 {
         if (flag == 0){
             System.out.println("Fallaste jajaja!!");
         }
+        scanner.close();
     }
 }
 
@@ -156,6 +197,7 @@ class Ejercicio10 {
         if(flag == 0){
             System.out.println("Dia Laboral");
         }
+        scanner.close();
     }
 }
 
