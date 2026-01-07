@@ -41,5 +41,6 @@ public class Main {
 			case 0:
 				break;
 		}
+		scanner.close();
 	}
 }
