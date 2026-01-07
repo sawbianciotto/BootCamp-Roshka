@@ -1,0 +1,23 @@
+
+td, th {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+
+.club {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.check {
+    color: rgb(6, 243, 6);
+}
+
+.x {
+    color: red;
+}
+
+.equal {
+    color: gray;
+}
