@@ -1,0 +1,47 @@
+
+.centrar img:nth-child(1){ left: 10px;   top: 10px; z-index: 5;} /* z-index es para la profundidad orden de apilamiento*/
+.centrar img:nth-child(2){ left: 100px;  top: 100px; z-index: 4;}
+.centrar img:nth-child(3){ left: 200px; top: 200px; z-index: 3;}
+.centrar img:nth-child(4){ left: 300px; top: 300px; z-index: 2;}
+.centrar img:nth-child(5){ left: 380px; top: 380px; z-index: 1;}
+
+
+.centrar{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black; /*sirve para poner bordes*/
+    position: relative;
+}
+
+.centrar img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.centrar img:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    cursor: pointer; /* para indicar que el elemento es clicable*/
+    border: 2px solid red;
+    width: 300px;
+    height: 300px;
+    }
+    
+.centrar img:hover ~ img{
+    opacity: 0;
+}
+
+body {
+    display: flex; /* sirve para convertir en flexbox*/
+    justify-content: center;  /* sirve para centrar el eje horizontal */
+    align-items: center;    /* sirve para centrar el eje vertical */
+    min-height: 100vh; /*sirve para establecer altura minima*/
+    margin: 0; /*margen*/
+}
+
+
