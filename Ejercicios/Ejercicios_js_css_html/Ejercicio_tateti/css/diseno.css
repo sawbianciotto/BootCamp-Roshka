@@ -1,0 +1,50 @@
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto; /* defina que tendra 3 columnas el contenedor*/
+  background-color: dodgerblue;
+  padding: 10px;
+}
+
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px; /*se usa para agregar espacio interno*/
+  font-size: 30px;/*tamaño de la fuente dentro de un elemento*/
+  text-align: center;
+  align-content: center;
+  height: 100px;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;/*separacion entre los elementos dentro del contenedor*/
+  margin-top: 16px;/*agregamos margen superior al contenedor*/
+}
+
+.boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #0074d9;
+  background: #e6f0fa;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton:hover {
+  background: #b3d7f7;
+}
+
+.ganador {
+  border: 2px solid #d35400;
+  background-color: dodgerblue !important;
+}
+
