@@ -1,0 +1,1025 @@
+{
+  "info": {
+    "_postman_id": "c7b76513-e171-4724-b1a0-44182591dd8c",
+    "name": "PrestamoLibros",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51738413"
+  },
+  "item": [
+    {
+      "name": "Prestamo",
+      "item": [
+        {
+          "name": "New Request",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/prestamos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "prestamos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"idProfesor\": 1,\r\n    \"idAula\": 2,\r\n    \"idCurso\": 3,\r\n    \"idAsignatura\": 2,\r\n    \"idColegio\": 2,\r\n    \"detalles\": [\r\n        { \"idLibro\": 1},\r\n        { \"idLibro\": 2}\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/Prestamo",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "Prestamo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/Prestamo/100",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "Prestamo",
+                "100"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProfesor\": 1,\r\n  \"idAula\": 1,\r\n  \"idCurso\": 1,\r\n  \"idAsignatura\": 2,\r\n  \"idColegio\":  1,\r\n  \"detalles\": [\r\n    { \"idLibro\": 1 },\r\n    { \"idLibro\": 3 }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/Prestamo/9",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "Prestamo",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Asignatura",
+      "item": [
+        {
+          "name": "New Request",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProfesor\": 1,\r\n  \"idAula\": 1,\r\n  \"idCurso\": 1,\r\n  \"idAsignatura\": 2,\r\n  \"idColegio\":  1,\r\n  \"detalles\": [\r\n    { \"idLibro\": 1 },\r\n    { \"idLibro\": 3 }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/asignaturas",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "asignaturas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"asignaturaNombre\": \"Guarani\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/asignaturas",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "asignaturas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"asignaturaNombre\": \"Fisica\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/asignaturas/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "asignaturas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProfesor\": 1,\r\n  \"idAula\": 1,\r\n  \"idCurso\": 1,\r\n  \"idAsignatura\": 2,\r\n  \"idColegio\":  1,\r\n  \"detalles\": [\r\n    { \"idLibro\": 1 },\r\n    { \"idLibro\": 3 }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/asignaturas/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "asignaturas",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Aula",
+      "item": [
+        {
+          "name": "New Request",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProfesor\": 1,\r\n  \"idAula\": 1,\r\n  \"idCurso\": 1,\r\n  \"idAsignatura\": 2,\r\n  \"idColegio\":  1,\r\n  \"detalles\": [\r\n    { \"idLibro\": 1 },\r\n    { \"idLibro\": 3 }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/aulas",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "aulas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombreAula\" : \"Aula 500\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/aulas",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "aulas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombreAula\" : \"A-54\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/aulas/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "aulas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProfesor\": 1,\r\n  \"idAula\": 1,\r\n  \"idCurso\": 1,\r\n  \"idAsignatura\": 2,\r\n  \"idColegio\":  1,\r\n  \"detalles\": [\r\n    { \"idLibro\": 1 },\r\n    { \"idLibro\": 3 }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/aulas/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "aulas",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Colegio",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/colegios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreColegio\": \"Colegio Nacional\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/colegios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreColegio\": \"Colegio Moderno\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/colegios/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/colegios/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegios",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ColegioProfe",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/colegioprofesores",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegioprofesores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idColegio\": 1,\r\n  \"idProfesor\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/colegioprofesores",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegioprofesores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idColegio\": 3,\r\n  \"idProfesor\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/colegioprofesores/3",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegioprofesores",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/colegioprofesores/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "colegioprofesores",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Curso",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/cursos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCurso\": \"Curso 666\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/cursos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCurso\": \"Lengua y Literatura\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/cursos/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "cursos",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/cursos/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "cursos",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Editorial",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/editoriales",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "editoriales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"editorialNombre\": \"Editorial Sudamericana\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/editoriales",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "editoriales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"editorialNombre\": \"Editorial Planeta\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/editoriales/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "editoriales",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"editorialNombre\": \"Editorial Planeta\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/editoriales/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "editoriales",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Profesor",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/profesores",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "profesores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Augusto Bianciotto\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/profesores",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "profesores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Jun Pérez\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/profesores/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "profesores",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Jun Pérez\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/profesores/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "profesores",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Libro",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/libros",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "libros"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"libroNombre\": \"Cien años de soledad\",\r\n  \"idEditorial\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/libros",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "libros"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"libroNombre\": \"Cien años de soledad\",\r\n  \"idEditorial\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/libros/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "libros",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"libroNombre\": \"Cien años de soledad\",\r\n  \"idEditorial\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/libros/4",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "libros",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DetallePrestamo",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/detalleprestamos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "detalleprestamos"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET \"http://localhost:8080/detalleprestamos\""
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idPrestamo\": 1,\r\n  \"idLibro\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/detalleprestamos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "detalleprestamos"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:8080/detalleprestamos\" -H \"Content-Type: application/json\" -d '{\"prestamo\":{\"id\":1},\"libro\":{\"id\":1},\"cantidad\":1}'"
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idPrestamo\": 1,\r\n  \"idLibro\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/detalleprestamos/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "detalleprestamos",
+                "1"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT \"http://localhost:8080/detalleprestamos/:id\" -H \"Content-Type: application/json\" -d '{\"id\":1,\"prestamo\":{\"id\":1},\"libro\":{\"id\":1},\"cantidad\":2}'"
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/detalleprestamos/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "detalleprestamos",
+                "1"
+              ]
+            },
+            "description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/detalleprestamos/:id\""
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
