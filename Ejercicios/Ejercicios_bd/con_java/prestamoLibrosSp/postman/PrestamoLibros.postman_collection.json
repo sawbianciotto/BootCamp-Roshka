@@ -15,6 +15,16 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTc2OTYzODg1NiwiZXhwIjoxNzY5NjM5NzU2fQ.DEjLKjH6iRiwDhEEbMPTM1C-MuT7GYC8SwTYFW9v4Lc",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
             "body": {
@@ -1009,6 +1019,145 @@
               ]
             },
             "description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/detalleprestamos/:id\""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"user1pass\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/auth/login",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTc2OTY4OTI3NCwiZXhwIjoxNzY5NjkwMTc0fQ.hlmjJqJ6NZUV-A7GhJZv0t3z1_ebQuaujEQUcJ4smng",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/usuarios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"user1pass\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"user1pass\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"user1pass\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios",
+                "2"
+              ]
+            }
           },
           "response": []
         }
