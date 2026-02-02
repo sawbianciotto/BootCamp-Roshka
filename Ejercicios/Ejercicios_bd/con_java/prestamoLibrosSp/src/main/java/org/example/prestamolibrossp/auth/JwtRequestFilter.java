@@ -29,7 +29,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         
-                
         if (request.getServletPath().equals("/auth/login")) {
             chain.doFilter(request, response);
             return;

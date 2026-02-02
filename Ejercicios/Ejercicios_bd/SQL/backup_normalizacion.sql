@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict pIKfXmpJpoI2NMU9oxg3HdKg1mywfoLdo7NGIT7lXjrLSE2jpF3e7NKVasVYhV5
+\restrict 84xHQsMmYnVxeOkaI2cQZIcziHDLylMFp4vE5WmdduoB6WEPX8cxFl1TLE25FLt
 
 -- Dumped from database version 18.1 (Ubuntu 18.1-1.pgdg24.04+2)
 -- Dumped by pg_dump version 18.1 (Ubuntu 18.1-1.pgdg24.04+2)
@@ -1429,7 +1429,8 @@ CREATE TABLE "Ejercicio 4".prestamo (
     "fechaPrestamo" date NOT NULL,
     "idCurso" integer NOT NULL,
     "idAula" integer NOT NULL,
-    "idAsignatura" integer NOT NULL
+    "idAsignatura" integer NOT NULL,
+    "idColegio" integer NOT NULL
 );
 
 
@@ -1489,6 +1490,41 @@ ALTER SEQUENCE "Ejercicio 4".profesor_id_seq OWNER TO postgres;
 --
 
 ALTER SEQUENCE "Ejercicio 4".profesor_id_seq OWNED BY "Ejercicio 4".profesor.id;
+
+
+--
+-- Name: usuarios; Type: TABLE; Schema: Ejercicio 4; Owner: postgres
+--
+
+CREATE TABLE "Ejercicio 4".usuarios (
+    id bigint NOT NULL,
+    username character varying(255) NOT NULL,
+    password character varying(255) NOT NULL
+);
+
+
+ALTER TABLE "Ejercicio 4".usuarios OWNER TO postgres;
+
+--
+-- Name: usuarios_id_seq; Type: SEQUENCE; Schema: Ejercicio 4; Owner: postgres
+--
+
+CREATE SEQUENCE "Ejercicio 4".usuarios_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE "Ejercicio 4".usuarios_id_seq OWNER TO postgres;
+
+--
+-- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: Ejercicio 4; Owner: postgres
+--
+
+ALTER SEQUENCE "Ejercicio 4".usuarios_id_seq OWNED BY "Ejercicio 4".usuarios.id;
 
 
 --
@@ -2330,6 +2366,13 @@ ALTER TABLE ONLY "Ejercicio 4".profesor ALTER COLUMN id SET DEFAULT nextval('"Ej
 
 
 --
+-- Name: usuarios id; Type: DEFAULT; Schema: Ejercicio 4; Owner: postgres
+--
+
+ALTER TABLE ONLY "Ejercicio 4".usuarios ALTER COLUMN id SET DEFAULT nextval('"Ejercicio 4".usuarios_id_seq'::regclass);
+
+
+--
 -- Name: alumno id; Type: DEFAULT; Schema: Ejercicio 5; Owner: postgres
 --
 
@@ -2778,7 +2821,8 @@ COPY "Ejercicio 3"."telefonoCliente" (id, "telefonoCliente", "clienteMembrecia")
 COPY "Ejercicio 4"."ColegioProfesor" (id, "idColegio", "idProfesor") FROM stdin;
 1	1	1
 2	2	2
-3	3	3
+3	3	2
+5	1	2
 \.
 
 
@@ -2787,9 +2831,10 @@ COPY "Ejercicio 4"."ColegioProfesor" (id, "idColegio", "idProfesor") FROM stdin;
 --
 
 COPY "Ejercicio 4".asignatura (id, "asignaturaNombre") FROM stdin;
-1	Matemáticas
 2	Historia
 3	Ciencias
+1	Fisica
+5	Guarani
 \.
 
 
@@ -2798,9 +2843,10 @@ COPY "Ejercicio 4".asignatura (id, "asignaturaNombre") FROM stdin;
 --
 
 COPY "Ejercicio 4".aula (id, "nombreAula") FROM stdin;
-1	Aula 101
 2	Aula 202
 3	Aula 303
+1	A-54
+5	Aula 500
 \.
 
 
@@ -2809,9 +2855,10 @@ COPY "Ejercicio 4".aula (id, "nombreAula") FROM stdin;
 --
 
 COPY "Ejercicio 4".colegio (id, "nombreColegio") FROM stdin;
-1	Colegio San Juan
 2	Colegio La Paz
 3	Colegio Santa María
+1	Colegio Moderno
+5	Colegio Nacional
 \.
 
 
@@ -2823,6 +2870,7 @@ COPY "Ejercicio 4".curso (id, "nombreCurso") FROM stdin;
 1	Curso 1
 2	Curso 2
 3	Curso 3
+5	Curso 666
 \.
 
 
@@ -2831,9 +2879,12 @@ COPY "Ejercicio 4".curso (id, "nombreCurso") FROM stdin;
 --
 
 COPY "Ejercicio 4"."detallePrestamo" (id, "idPrestamo", "idLibro") FROM stdin;
-1	1	1
-2	2	2
-3	3	3
+29	1	2
+30	10	1
+31	10	2
+32	9	1
+33	9	3
+34	1	2
 \.
 
 
@@ -2845,6 +2896,7 @@ COPY "Ejercicio 4".editorial (id, "editorialNombre") FROM stdin;
 1	Editorial Alfa
 2	Editorial Beta
 3	Editorial Gamma
+5	Editorial Sudamericana
 \.
 
 
@@ -2853,9 +2905,10 @@ COPY "Ejercicio 4".editorial (id, "editorialNombre") FROM stdin;
 --
 
 COPY "Ejercicio 4".libro (id, "libroNombre", "idEditorial") FROM stdin;
-1	Álgebra Básica	1
 2	Historia Universal	2
 3	Ciencias Naturales	3
+1	Cien años de soledad	1
+5	Cien años de soledad	1
 \.
 
 
@@ -2863,10 +2916,10 @@ COPY "Ejercicio 4".libro (id, "libroNombre", "idEditorial") FROM stdin;
 -- Data for Name: prestamo; Type: TABLE DATA; Schema: Ejercicio 4; Owner: postgres
 --
 
-COPY "Ejercicio 4".prestamo (id, "idProfesor", "fechaPrestamo", "idCurso", "idAula", "idAsignatura") FROM stdin;
-1	1	2024-01-15	1	1	1
-2	2	2024-02-20	2	2	2
-3	3	2024-03-25	3	3	3
+COPY "Ejercicio 4".prestamo (id, "idProfesor", "fechaPrestamo", "idCurso", "idAula", "idAsignatura", "idColegio") FROM stdin;
+1	1	2024-01-15	1	1	1	2
+9	1	2026-01-26	1	1	2	1
+10	1	2026-01-26	3	2	2	2
 \.
 
 
@@ -2875,9 +2928,19 @@ COPY "Ejercicio 4".prestamo (id, "idProfesor", "fechaPrestamo", "idCurso", "idAu
 --
 
 COPY "Ejercicio 4".profesor (id, nombre) FROM stdin;
-1	Juan Perez
 2	María Gomez
 3	Luis Fernández
+1	Jun Pérez
+5	Augusto Bianciotto
+\.
+
+
+--
+-- Data for Name: usuarios; Type: TABLE DATA; Schema: Ejercicio 4; Owner: postgres
+--
+
+COPY "Ejercicio 4".usuarios (id, username, password) FROM stdin;
+4	user1	$2a$10$v.T9neQ/YLSBjoSjO7jsxOstzK0lDJwklXM1JB3NjveUFiyN.IZwy
 \.
 
 
@@ -3271,70 +3334,77 @@ SELECT pg_catalog.setval('"Ejercicio 3"."telefonoCliente_id_seq"', 3, true);
 -- Name: ColegioProfesor_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4"."ColegioProfesor_id_seq"', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4"."ColegioProfesor_id_seq"', 37, true);
 
 
 --
 -- Name: asignatura_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".asignatura_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".asignatura_id_seq', 37, true);
 
 
 --
 -- Name: aula_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".aula_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".aula_id_seq', 37, true);
 
 
 --
 -- Name: colegio_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".colegio_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".colegio_id_seq', 37, true);
 
 
 --
 -- Name: curso_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".curso_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".curso_id_seq', 37, true);
 
 
 --
 -- Name: detallePrestamo_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4"."detallePrestamo_id_seq"', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4"."detallePrestamo_id_seq"', 62, true);
 
 
 --
 -- Name: editorial_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".editorial_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".editorial_id_seq', 37, true);
 
 
 --
 -- Name: libro_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".libro_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".libro_id_seq', 37, true);
 
 
 --
 -- Name: prestamo_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".prestamo_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".prestamo_id_seq', 42, true);
 
 
 --
 -- Name: profesor_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Ejercicio 4".profesor_id_seq', 3, true);
+SELECT pg_catalog.setval('"Ejercicio 4".profesor_id_seq', 37, true);
+
+
+--
+-- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: Ejercicio 4; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"Ejercicio 4".usuarios_id_seq', 4, true);
 
 
 --
@@ -3802,6 +3872,14 @@ ALTER TABLE ONLY "Ejercicio 4".profesor
 
 
 --
+-- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: Ejercicio 4; Owner: postgres
+--
+
+ALTER TABLE ONLY "Ejercicio 4".usuarios
+    ADD CONSTRAINT usuarios_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: alumno alumno_pkey; Type: CONSTRAINT; Schema: Ejercicio 5; Owner: postgres
 --
 
@@ -4178,6 +4256,14 @@ ALTER TABLE ONLY "Ejercicio 4"."ColegioProfesor"
 
 
 --
+-- Name: prestamo fk_detalleprestamo_idcolegio; Type: FK CONSTRAINT; Schema: Ejercicio 4; Owner: postgres
+--
+
+ALTER TABLE ONLY "Ejercicio 4".prestamo
+    ADD CONSTRAINT fk_detalleprestamo_idcolegio FOREIGN KEY ("idColegio") REFERENCES "Ejercicio 4".colegio(id);
+
+
+--
 -- Name: detallePrestamo fk_detalleprestamo_idlibro; Type: FK CONSTRAINT; Schema: Ejercicio 4; Owner: postgres
 --
 
@@ -4349,5 +4435,5 @@ ALTER TABLE ONLY "Ejercicio 6".prestamo
 -- PostgreSQL database dump complete
 --
 
-\unrestrict pIKfXmpJpoI2NMU9oxg3HdKg1mywfoLdo7NGIT7lXjrLSE2jpF3e7NKVasVYhV5
+\unrestrict 84xHQsMmYnVxeOkaI2cQZIcziHDLylMFp4vE5WmdduoB6WEPX8cxFl1TLE25FLt
 

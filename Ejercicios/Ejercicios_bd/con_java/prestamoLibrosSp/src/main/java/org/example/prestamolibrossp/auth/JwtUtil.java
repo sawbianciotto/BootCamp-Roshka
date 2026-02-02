@@ -25,14 +25,14 @@ public class JwtUtil {
             .compact(); // Devuelve el token JWT como String
     }
 
-    // Extrae el username del token JWT
-public String extractUsername(String jwt){
-    return Jwts.parser() // Crea un parser para leer y validar el JWT.
-            .setSigningKey(SECRET_KEY) // Le indica al parser la clave secreta para validar la firma del token.
-            .parseClaimsJws(jwt) // Parsea (lee y valida) el token JWT recibido.
-            .getBody() // Obtiene el cuerpo (claims) del token, donde están los datos.
-            .getSubject(); // Extrae el "subject" (el username) del token.
-}
+        // Extrae el username del token JWT
+    public String extractUsername(String jwt){
+        return Jwts.parser() // Crea un parser para leer y validar el JWT.
+                .setSigningKey(SECRET_KEY) // Le indica al parser la clave secreta para validar la firma del token.
+                .parseClaimsJws(jwt) // Parsea (lee y valida) el token JWT recibido.
+                .getBody() // Obtiene el cuerpo (claims) del token, donde están los datos.
+                .getSubject(); // Extrae el "subject" (el username) del token.
+    }
 
     // Valida el token JWT: verifica que el username coincida y que no esté expirado
     public boolean validateToken(String jwt, UserDetails detallesUsuarios){
